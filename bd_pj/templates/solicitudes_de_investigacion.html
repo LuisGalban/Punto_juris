@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+    {% block content1 %}
+        <title>Solicitudes de investigacion</title>
+    {% endblock content1 %}
+{% block content2 %}
+    <body>
+        <div class="text-gray-600">
+            <p class="font-medium text-lg">Solicitudes de investigacion</p>
+            <p>Please fill out all the fields.</p>
+        </div>
+        <form action="new_solicitud/" method="post">
+            {% csrf_token %}
+            <div class="lg:col-span-2">
+                <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
+                <div class="md:col-span-5">
+                    <label for="asunt">Asunto</label>
+                    <input type="text" name="asunto" placeholder="Asunto" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+
+                <div class="md:col-span-5">
+                    <label for="desc">Descripcion</label>
+                    <textarea name="descripcion" rows="10" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" placeholder="Descripcion"></textarea>
+                </div>
+
+                <div class="md:col-span-4">
+                    <label for="soli">Solicitante</label>
+                    <input type="text" name="solicitante" placeholder="Usuario solicitante" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+
+                <div class="md:col-span-3">
+                    <label for="fecSoli">Fecha de solicitud</label>
+                    <input type="date" name="fecha_de_solicitud" placeholder="Fecha de solicitud" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+
+                <div class="md:col-span-4">
+                    <label for="Org">Organismos Relacionados</label>
+                    <input type="text" name="organismos_relacionados" placeholder="Organismos Relacionados" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+
+                <div class="md:col-span-4">
+                    <label for="Acts">Actos Relacionados</label>
+                    <input type="text" name="actos_relacionados" placeholder="Actos Relacionados" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+
+                <div class="md:col-span-3">
+                    <label for="Adj">Archivo Adjunto</label>
+                    <input type="file" name="adjunto" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+
+                <div class="md:col-span-3">
+                    <label for="res">Respuesta</label>
+                    <input type="text" name="respuesta" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+
+                <div class="md:col-span-3">
+                    <label for="fechres">Fecha de respuesta</label>
+                    <input type="date" name="fecha_de_respuesta" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+
+                <div class="md:col-span-4">
+                    <select name="respuesta_aprobada">
+                        <option value="True">Respuesta:</option>
+                        <option value="False">Rechazada</option>
+                        <option value="True">Aprobada</option>
+                    </select>
+                </div>
+
+                <div class="md:col-span-5 text-right">
+                    <div class="inline-flex items-end">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            
+        </form>
+    </body>
+{% endblock content2 %}
+</body>
+</html>

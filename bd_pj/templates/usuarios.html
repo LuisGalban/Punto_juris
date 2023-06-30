@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+    {% block content1 %}
+        <title>Usuarios_mercheado_main</title>
+    {% endblock content1 %}
+{% block content2 %}
+    <body>
+
+        <div class="text-gray-600">
+            <p class="font-medium text-lg">Users</p>
+            <p>Please fill out all the fields.</p>
+        </div>
+        <form action="new_user/" method="post">
+            {% csrf_token %}
+            <div class="lg:col-span-2">
+                <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
+                <div class="md:col-span-5">
+                    <label for="full_name">Nombre Completo</label>
+                    <input type="text" name="nombre" id="full_name" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" />
+                </div>
+                <div class="md:col-span-5">
+                    <select name="tipo_de_documento_identificatorio" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                        <option value="Cedula de identidad">Ingresa un documento de identidad</option>
+                        <option value="Cedula de identidad">Cedula de identidad</option>
+                        <option value="Pasaporte">Pasaporte</option>
+                        <option value="RIF">RIF</option>
+                    </select>
+                </div>
+
+                <div class="md:col-span-4">
+                    <input type="number" name="nr_documento_identidad" placeholder="numero de identificacion" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+
+                <div class="md:col-span-3">
+                    <input type="email" name="correo_electronico_afiliado" placeholder="Correo electronico" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+
+                <div class="md:col-span-4">
+                    <select name="tipo_de_usuario" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                        <option value="Usuario_Natural">Ingresa un tipo de usuario</option>
+                        <option value="investigador">Investigador</option>
+                        <option value="supervisor">Supervisor</option>
+                        <option value="director">Director</option>
+                        <option value="Usuario_Natural">Usuario Natural</option>
+                        <option value="Usuario_Empresarial">Usuario Empresarial</option>
+                    </select>
+                </div>
+
+                <div class="md:col-span-4">
+                    <select name="tipo_de_suscripcion" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                        <option value="Mensual">Ingresa un tipo de suscripcion</option>
+                        <option value="Mensual">Mensual</option>
+                        <option value="Anual">Anual</option>
+                    </select>
+                </div>
+
+                <div class="md:col-span-3">
+                    <input type="number" name="nr_de_usuarios" placeholder="numero de usuarios" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+
+                <div class="md:col-span-3">
+                    <label for="fecha_suscripcion">Fecha de suscripcion</label>
+                    <input type="date" name="fecha_de_suscripcion" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+
+                <div class="md:col-span-3">
+                    <label for="ult_renovacion">Ultima Renovacion</label>
+                    <input type="date" name="ultima_renovacion" placeholder="ultima renovacion" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+
+                <div class="md:col-span-4">
+                    <select name="suscripcion_automatica" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                        <option value="True">Suscripcion Automatica</option>
+                        <option value="False">Cancelar</option>
+                        <option value="True">Aceptar</option>
+                    </select>
+                </div>
+
+                <div class="md:col-span-4">
+                    <select name="fecha_de_cancelacion" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                        <option value="ultima renovacion">Fecha de cancelacion</option>
+                        <option value="ultima renovacion">Ultima renovacion</option>
+                        <option value="Anual">Anual</option>
+                    </select>
+                </div>
+
+                <div class="md:col-span-5">
+                    <textarea name="solicitudes_de_investigacion" rows="10" placeholder="solicitudes de investigacion" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"></textarea>
+                </div>
+
+                <div class="md:col-span-2">
+                    <select name="rol" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                        <option value="usuario_free">Rol</option>
+                        <option value="usuario_pago">Usuario Pago</option>
+                        <option value="usuario_free">Usuario Gratuito</option>
+                        <option value="investigador">Investigador</option>
+                        <option value="supervisor">Supervisor</option>
+                        <option value="director">Director</option>
+                    </select>
+                </div>
+
+                <div class="md:col-span-5 text-right">
+                    <div class="inline-flex items-end">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+            
+        </form>
+    </body>
+{% endblock content2 %}

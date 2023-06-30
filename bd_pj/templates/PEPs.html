@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+    {% block content1 %}
+        <title>PEPs</title>
+    {% endblock content1 %}
+{% block content2 %}
+<body>
+    <div class="text-gray-600">
+        <p class="font-medium text-lg">PEPs</p>
+        <p>Please fill out all the fields.</p>
+    </div>
+    <form action="new_PEP/" method="post">
+        {% csrf_token %}
+        <div class="lg:col-span-2">
+            <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
+            <div class="md:col-span-5">
+                <label for="nomb">Nombre</label>
+                <input type="text" name="nombre" placeholder="nombre" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+            </div>
+
+            <div class="md:col-span-5">
+                <label for="organ">Organismos</label>
+                <input type="text" name="organismos" placeholder="organismos" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+            </div>
+
+            <div class="md:col-span-4">
+                <label for="actdesig">Acto de designacion</label>
+                <input type="text" name="acto_de_designacion" placeholder="Acto de designacion" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+            </div>
+
+            <div class="md:col-span-3">
+                <label for="fecdesig">Fecha de designacion</label>
+                <input type="date" name="fecha_designacion" placeholder="Fecha de designacion" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+            </div>
+
+            <div class="md:col-span-5 text-right">
+                <div class="inline-flex items-end">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+    </form>
+</body>
+{% endblock content2 %}
+</body>
+        
+        
+        
+        
+
+        <button>Save</button>
+    </form>
+</body>
+</html>

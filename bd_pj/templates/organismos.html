@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+    {% block content1 %}
+        <title>Organismos</title>
+    {% endblock content1 %}
+{% block content2 %}
+<body>
+    <body>
+        <div class="text-gray-600">
+            <p class="font-medium text-lg">Organismos</p>
+            <p>Please fill out all the fields.</p>
+        </div>
+        <form action="new_organismo/" method="post">
+            {% csrf_token %}
+            <div class="lg:col-span-2">
+                <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
+                <div class="md:col-span-5">
+                    <label for="Orgs">Organos</label>
+                    <input type="text" name="organos" placeholder="organos" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+    
+                <div class="md:col-span-5">
+                    <label for="Soli">Solicitudes de Investigacion</label>
+                    <textarea name="solicitudes_de_investigacion" rows="10" placeholder="solicitudes de investigacion" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"></textarea>
+                </div>
+    
+                <div class="md:col-span-4">
+                    <label for="Minisprinc">Ministerio Principal</label>
+                    <input type="text" name="ministerio_principal" placeholder="ministerio principal" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+    
+                <div class="md:col-span-3">
+                    <label for="Subor">Subordinado A:</label>
+                    <input type="text" name="subordinado_A" placeholder="subordinado" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+
+                <div class="md:col-span-3">
+                    <label for="Cordi">Cordinado Por:</label>
+                    <input type="text" name="cordinado_Por" placeholder="cordinado" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+    
+                <div class="md:col-span-3">
+                    <label for="act">Acto de creacion</label>
+                    <input type="text" name="acto_de_creacion" placeholder="Acto en el que se creo" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+                
+                <div class="md:col-span-3">
+                    <label for="gace">Gaceta de creacion</label>
+                    <input type="number" name="nr_de_gaceta_creacion" placeholder="Gaceta en la que se creo este organismo" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+                
+                <div class="md:col-span-3">
+                    <label for="actregul">Acto que regula su organismo:</label>
+                    <textarea name="acto_que_regula_su_organismo" rows="10" placeholder="Acto que regula su organismo" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"></textarea>
+                </div>
+
+                <div class="md:col-span-3">
+                    <label for="nrgaoc">Gaceta que contiene el acto de organizacion</label>
+                    <input type="number"  name="nr_de_gaceta_acto_organizacion" placeholder="Numero de gaceta que contiene el acto de organizacion y funcionamiento" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+
+                <div class="md:col-span-3">
+                    <label for="engact">Encargado Actual</label>
+                    <input type="text" name="encargado_actual" placeholder="Encargado actual" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+
+                <div class="md:col-span-3">
+                    <label for="actdesign">Acto de designacion</label>
+                    <input type="text" name="acto_de_designacion" placeholder="Acto de designacion" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+
+                <div class="md:col-span-3">
+                    <label for="gacactdesign">Gaceta que contiene el acto de designacion</label>
+                    <input type="number" name="nr_de_gaceta_acto_designacion" placeholder="Numero de gaceta que contiene el acto de designacion" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+
+                <div class="md:col-span-3">
+                    <label for="notes">Notas</label>
+                    <textarea name="notas" rows="20" placeholder="Notas" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"></textarea>
+                </div>
+
+                <div class="md:col-span-3">
+                    <label for="actsemitid">Actos emitidos</label>
+                    <textarea name="actos_emitidos" rows="20" placeholder="Actos Emitidos" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"></textarea>
+                </div>
+
+                <div class="md:col-span-3">
+                    <label for="funcpublic">Funcion Publica</label>
+                    <input type="text" name="funcion_publica" placeholder="Funcion publica" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+
+                <div class="md:col-span-3">
+                    <label for="territ">Territorialidad</label>
+                    <input type="text" name="territorialidad" placeholder="Territorialidad" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+
+                <div class="md:col-span-3">
+                    <label for="telef">Telefono de contacto</label>
+                    <input type="text" name="telefono_contacto" placeholder="Telefono de contacto" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">   
+                </div>
+
+                <div class="md:col-span-3">
+                    <label for="mail">Email</label>
+                    <input type="email" name="correo_contacto" placeholder="Email de contacto" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+
+                <div class="md:col-span-3">
+                    <label for="ubi">Ubicacion de oficinas</label>
+                    <textarea name="ubicacion_oficinas" rows="10" placeholder="Ubicacion de las oficinas" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"></textarea>
+                </div>
+
+                <div class="md:col-span-3">
+                    <label for="fechdesign">Fecha de designacion</label>
+                    <input type="date" name="fecha_designacion" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                </div>
+    
+                <div class="md:col-span-5 text-right">
+                    <div class="inline-flex items-end">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            
+        </form>
+    </body>
+    {% endblock content2 %}
+    </body>
+</html>

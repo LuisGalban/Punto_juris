@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+    {% block content1 %}
+        <title>Actos</title>
+    {% endblock content1 %}
+{% block content2 %}
+<body>
+    <div class="text-gray-600">
+        <p class="font-medium text-lg">Gacetas Oficiales</p>
+        <p>Please fill out all the fields.</p>
+    </div>
+    <form action="new_acto/" method="post">
+        {% csrf_token %}
+        <div class="lg:col-span-2">
+            <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
+            <div class="md:col-span-5">
+                <label for="acts">Actos</label>
+                <input type="text" name="actos" placeholder="Actos" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+            </div>
+
+            <div class="md:col-span-5">
+                <label for="soliinvest">Solicitudes de investigacion</label>
+                <input type="text" name="solicitudes_de_investigacion" placeholder="Solicitudes de investigacion" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+            </div>
+
+            <div class="md:col-span-4">
+                <label for="orgscread">Organos creados</label>
+                <input type="text" name="organos_creados" placeholder="Organos Creados" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+            </div>
+
+            <div class="md:col-span-3">
+                <label for="regorgs">Regula a los organos: </label>
+                <input type="text" name="regula_los_organos" placeholder="Regula los organos: " class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+            </div>
+
+            <div class="md:col-span-4">
+                <label for="desgia">Designa a: </label>
+                <input type="text" name="designa_A" placeholder="Designa a:" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+            </div>
+
+            <div class="md:col-span-4">
+                <label for="sum">Gaceta de origen</label>
+                <input type="number" name="gaceta_de_origen" placeholder="Gaceta de origen" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+            </div>
+
+            <div class="md:col-span-4">
+                <label for="fechac">Fecha de acto</label>
+                <input type="date" name="fecha" placeholder="fecha" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+            </div>
+
+            <div class="md:col-span-4">
+                <label for="fechpubl">Fecha de publicacion</label>
+                <input type="date" name="fecha_de_publicacion" placeholder="Fecha de publicacion" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+            </div>
+
+            <div class="md:col-span-4">
+                <label for="orgemi">Organo emisor</label>
+                <input type="text" name="organo_emisor" placeholder="Organo emisor" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+            </div>
+
+            <div class="md:col-span-4">
+                <label for="contact">Contenido del acto</label>
+                <textarea name="contenido_acto" rows="10" placeholder="Contenido del Acto" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"></textarea>
+            </div>
+
+            <div class="md:col-span-4">
+                <label for="cont">Contenido</label>
+                <textarea name="contenido" rows="20" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"></textarea>
+            </div>
+
+            <div class="md:col-span-5 text-right">
+                <div class="inline-flex items-end">
+                <button class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">Submit</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+    </form>
+</body>
+{% endblock content2 %}
+</html>

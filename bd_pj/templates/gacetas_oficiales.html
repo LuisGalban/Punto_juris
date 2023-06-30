@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+    {% block content1 %}
+        <title>Gacetas Oficiales</title>
+    {% endblock content1 %}
+{% block content2 %}
+<body>
+    <div class="text-gray-600">
+        <p class="font-medium text-lg">Gacetas Oficiales</p>
+        <p>Please fill out all the fields.</p>
+    </div>
+    <form action="new_gaceta/" method="post">
+        {% csrf_token %}
+        <div class="lg:col-span-2">
+            <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
+            <div class="md:col-span-5">
+                <label for="nomb">Nombre</label>
+                <input type="text" name="nombre" placeholder="nombre" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+            </div>
+
+            <div class="md:col-span-5">
+                <label for="acts">Actos</label>
+                <input type="text" name="actos" placeholder="actos" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+            </div>
+
+            <div class="md:col-span-4">
+                <label for="fechpublic">Fecha de publicacion</label>
+                <input type="date" name="fecha_publicacion" placeholder="Fecha de publicacion" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+            </div>
+
+            <div class="md:col-span-3">
+                <label for="fecdesig">Tipo de gaceta</label>
+                <select name="tipo_de_gaceta" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                    <option value="Gaceta Ordinaria">Ingresa un tipo de Gaceta</option>
+                    <option value="Gaceta Ordinaria">Gaceta Ordinaria</option>
+                    <option value="Gaceta Extraordinaria">Gaceta Extraordinaria</option>
+                </select>
+            </div>
+
+            <div class="md:col-span-4">
+                <label for="Terri">Territorialidad</label>
+                <input type="text" name="territorialidad" placeholder="Territorialidad" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+            </div>
+
+            <div class="md:col-span-4">
+                <label for="sum">Sumario</label>
+                <textarea name="sumario" rows="10" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"></textarea>
+            </div>
+
+            <div class="md:col-span-5 text-right">
+                <div class="inline-flex items-end">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+    </form>
+</body>
+{% endblock content2 %}
+</body>
+</html>

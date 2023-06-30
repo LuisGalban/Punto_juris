@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios</title>
+</head>
+estoy en main
+
+<body>
+    {% for user in users %}
+        <div>
+            <h2>{{user.nombre}}</h2>
+            <p>{{user.tipo_de_usuario}}</p>
+            <p>{{user.tipo_de_suscripcion}}</p>
+            <p>{{user.nr_de_usuarios}}</p>
+            <p>{{user.fecha_de_suscripcion}}</p>
+            <p>{{user.ultima_renovacion}}</p>
+            <p>{{user.suscripcion_automatica}}</p>
+            <p>{{user.fecha_de_cancelacion}}</p>
+            <p>{{user.tipo_de_documento_identificatorio}}</p>
+            <p>{{user.nr_documento_identidad}}</p>
+            <p>{{user.correo_electronico_afiliado}}</p>
+            {% for relacion in relaciones %}
+                {% if relacion.id_usuario.nombre == user.nombre %}
+                    <p>{{relacion.id_solicitudes}}</p>
+                {% endif %}
+            {% endfor %}
+            <p>{{user.rol}}</p>
+        </div>
+    {% endfor %}
+cambios prueba merge main
+</body>
+</html>
